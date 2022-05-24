@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Create RequestOrders";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Привязка  заказов к заявке</h1>
+</div>
+
+<form method="post">
+    <div class="row">
+        <div class="col-4">Заявка:</div>
+        <div class="col-8">
+            <select id="requestId" name="requestId" class="form-control" asp-items="@(new SelectList(@ViewBag.Requests,"Id", "RequestName"))"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">Заказ:</div>
+        <div class="col-8">
+            <select id="orderId" name="orderId" multiple="multiple" class="form-control" asp-items="@(new SelectList(@ViewBag.Orders,"Id", "OrderName"))"></select>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <input type="submit" value="Привязать" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

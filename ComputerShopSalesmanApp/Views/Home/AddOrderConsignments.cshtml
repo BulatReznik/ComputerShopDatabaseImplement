@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Create OrderConsignment";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Привязка партий товаров к заказу</h1>
+</div>
+
+<form method="post">
+    <div class="row">
+        <div class="col-4">Заказ:</div>
+        <div class="col-8">
+            <select id="orderId" name="orderId" class="form-control" asp-items="@(new SelectList(@ViewBag.Orders,"Id", "OrderName"))"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">Партии товаров:</div>
+        <div class="col-8">
+            <select id="consignmentsId" name="consignmentsId" multiple="multiple" class="form-control" asp-items="@(new SelectList(@ViewBag.Consignments,"Id", "ConsignmentName"))"></select>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <input type="submit" value="Привязать" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,55 @@
+﻿@using ComputerShopContracts.ViewModels
+
+@model List<ConsignmentViewModel>
+@{
+    ViewData["Title"] = "Consignments";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Партии товаров</h1>
+</div>
+
+<div class="text-center">
+    @{
+        if (Model == null)
+        {
+            <h3 class="display-4">Авторизируйтесь</h3>
+            return;
+        }
+        <p>
+            <a class="btn btn-success" asp-action="ConsignmentCreate">Добавить партию товаров</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Номер
+                    </th>
+                    <th>
+                        Название партии товаров
+                    </th>
+                    <th>
+                        Изменение партии товарod
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ConsignmentName)
+                        </td>
+                        <td>
+                            <a class="btn btn-warning button-fixed button-sm" asp-action="ConsignmentUpdate" asp-route-consignmentId="@item.Id" asp-route-consignmentName="@item.ConsignmentName">Изменить</a>
+                            <a class="btn btn-danger button-fixed button-sm" asp-action="ConsignmentDelete" asp-route-consignmentId="@item.Id">Удалить</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

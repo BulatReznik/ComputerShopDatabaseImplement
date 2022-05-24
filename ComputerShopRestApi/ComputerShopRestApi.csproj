@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ComputerShopBusinessLogics\ComputerShopBusinessLogics.csproj" />
+    <ProjectReference Include="..\ComputerShopContracts\ComputerShopContracts.csproj" />
+    <ProjectReference Include="..\ComputerShopDatabaseImplement\ComputerShopDatabaseImplement.csproj" />
+  </ItemGroup>
+
+</Project>

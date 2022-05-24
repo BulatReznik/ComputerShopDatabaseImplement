@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Create Consignment";
+}
+<div class="text-center">
+    <h2 class="display-4">Создание партии товаров</h2>
+</div>
+<form method="post">
+    <div class="row">
+        <div class="col-4">Название партии товаров:</div>
+        <div class="col-8"><input type="text" name="consignmentName" id="consignmentName" size="35" /></div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">Готовые товары:</div>
+        <div class="col-8">
+            <select id="finalProductsId" name="finalProductsId" multiple="multiple" class="form-control" asp-items="@(new SelectList(@ViewBag.finalProducts,"Id", "FinalProductName"))"></select>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <input type="submit" value="Создать" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

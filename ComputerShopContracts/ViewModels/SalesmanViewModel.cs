@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿ using System.ComponentModel;
 
 namespace ComputerShopContracts.ViewModels
 {
@@ -8,8 +8,11 @@ namespace ComputerShopContracts.ViewModels
 
         [DisplayName("Продавец")]
         public string SalesmanName { get; set; }
+
         [DisplayName("Email")]
         public string Email { get; set; }
+
+        [DisplayName("Пароль")]
         public string Password { get; set; }
 
     }

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Create Order";
+}
+<div class="text-center">
+    <h2 class="display-4">Создание заказа</h2>
+</div>
+<form method="post">
+    <div class="row">
+        <div class="col-4">Наименование заказа:</div>
+        <div class="col-8"><input type="text" name="orderName" id="orderName" size="35" /></div>
+    </div>
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    /*<div class="row">
+        <div class="col-4">Процентная ставка:</div>
+        <div class="col-8"><input type="text" name="depositInterest" id="depositInterest" /></div>
+    </div>*/
+    ////////////////////////////////////////////////////////////////////////////////////////////
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <input type="submit" value="Создать" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

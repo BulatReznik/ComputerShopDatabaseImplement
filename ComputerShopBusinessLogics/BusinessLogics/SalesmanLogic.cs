@@ -8,10 +8,10 @@ using System.Text;
 
 namespace RepairBusinessLogic.BusinessLogics
 {
-    public class ClientLogic : ISalesmanLogic
+    public class SalesmanLogic : ISalesmanLogic
     {
         private readonly ISalesmanStorage _salesmanStorage;
-        public ClientLogic(ISalesmanStorage SalesmanStorage)
+        public SalesmanLogic(ISalesmanStorage SalesmanStorage)
         {
             _salesmanStorage = SalesmanStorage;
         }
@@ -55,9 +55,10 @@ namespace RepairBusinessLogic.BusinessLogics
             });
             if (element == null)
             {
-                throw new Exception("Клиент не найден");
+                throw new Exception("Продавец не найден");
             }
             _salesmanStorage.Delete(model);
         }
+
     }
 }

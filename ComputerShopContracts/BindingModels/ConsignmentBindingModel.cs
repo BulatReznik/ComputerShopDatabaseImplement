@@ -8,10 +8,10 @@ namespace ComputerShopContracts.BindingModels
 {
     public class ConsignmentBindingModel
     {
-        public int Id { get; set; }
-        public string СonsignmentName { get; set; }
-        public Dictionary<int, (string, int)> FinalProducts { get; set; }
-        public Dictionary<int, (string, int)> СonsignmentOrders { get; set; }
+        public int? Id { get; set; }
+        public string ConsignmentName { get; set; }
+        public Dictionary<int, string> ConsignmentOrders { get; set; }
+        public int SalesmanId { get; set; }
 
     }
 }

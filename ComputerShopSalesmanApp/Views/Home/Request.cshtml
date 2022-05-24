@@ -1,0 +1,70 @@
+﻿@using ComputerShopContracts.ViewModels
+
+@model List<RequestViewModel>
+@{
+    ViewData["Title"] = "Requests";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Заявки</h1>
+</div>
+
+<div class="text-center">
+    @{
+        if (Model == null)
+        {
+            <h3 class="display-4">Авторизируйтесь</h3>
+            return;
+        }
+        <p>
+            <a class="btn btn-success" asp-action="RequestCreate">Создать заявки</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Номер
+                    </th>
+                    <th>
+                        Название завявки
+                    </th>
+                    <th>
+                        Дата реализации
+                    </th>
+                    <th>
+                        Дата заявки
+                    </th>
+                    <th>
+                        Изменение пополнения
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateImplement)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.DateRequest)
+                        </td>
+                        <td>
+                            <a class="btn btn-warning button-fixed button-sm" asp-action="RequestUpdate"
+                            asp-route-requestId="@item.Id" asp-route-requestName="@item.RequestName" asp-route-dateImplement="@item.DateImplement"
+                            asp-route-dateRequest="@item.DateRequest">Изменить</a>
+
+                            <a class="btn btn-danger button-fixed button-sm" asp-action="RequestDelete" asp-route-requestId="@item.Id">Удалить</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

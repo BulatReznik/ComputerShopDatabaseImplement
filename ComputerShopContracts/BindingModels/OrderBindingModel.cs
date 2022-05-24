@@ -11,7 +11,7 @@ namespace ComputerShopContracts.BindingModels
         public int? Id { get; set; }
         public string OrderName { get; set; }
         public DateTime DateOrder { get; set; }
-        public Dictionary<int, (string, int)> СonsignmentOrders { get; set; }
-        public Dictionary<int, (string, int)> OrdersRequests { get; set; }
+        public int SalesmanId { get; set; }
+        public Dictionary<int, string> OrderConsignments { get; set; }
     }
 }

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Create Request";
+}
+<div class="text-center">
+    <h2 class="display-4">Создание заявки</h2>
+</div>
+<form method="post">
+    <div class="row">
+        <div class="col-4">Название заявки:</div>
+        <div class="col-8"><input type="text" name="requestName" id="requestName"/></div>
+    </div>
+    <div class="row">
+        <div class="col-4">Заказ:</div>
+        <div class="col-8">
+            <select id="orderId" name="orderId" class="form-control" asp-items="@(new SelectList(@ViewBag.Orders,"Id", "OrderName"))"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <input type="submit" value="Создать" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
